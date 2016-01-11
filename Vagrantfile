@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
     sudo yum update -y -x kernel*
     sudo cp -f /usr/share/zoneinfo/Japan /etc/localtime
     sudo cp -f /dev/null /etc/securetty
-    sudo sed -i -e 's/^#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config
+    sudo sed -i -e 's/^#PermitRootLogin yes$/PermitRootLogin no/' /etc/ssh/sshd_config
     sudo service sshd reload
     for service in auditd blk-availability kdump lvm2-monitor mdmonitor netfs nfslock postfix rpcgssd rpcbind udev-post
     do
