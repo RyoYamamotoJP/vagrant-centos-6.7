@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = 'bento/centos-6.7'
   config.vm.box += '-i386' if ENV['PROCESSOR_ARCHITECTURE'] == 'x86'
-  config.vm.provision 'shell', inline: <<-SHELL
+  config.vm.provision :shell, inline: <<-SHELL
     sudo yum update -y -x kernel*
     sudo cp -f /usr/share/zoneinfo/Japan /etc/localtime
     sudo cp -f /dev/null /etc/securetty
